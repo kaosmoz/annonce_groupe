@@ -14,11 +14,11 @@ try {
 
   await db.getConnection();
   console.log(`connection a la base de données ${env.DB_NAME} réussie`);
+
+
 } catch (error) {
   console.error(
-    `erreur lors de la connexion à la base de données`,
-    error.message
-  );
+    `erreur lors de la connexion à la base de données`, error.message);
   process.exit(1);
 }
 
