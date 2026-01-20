@@ -5,9 +5,9 @@ export const categoryModel = {
         const sql = 'INSERT INTO categories (name) VALUES (?)'
         return db.query(sql, [name])
     },
-    findByTitle: async (name) => {
+    findByTitle: async () => {
         const sql = 'SELECT * FROM categories'
-        const [rows] = await db.query(sql, [name])
+        const [rows] = await db.query(sql)
         return rows
     }
 }
