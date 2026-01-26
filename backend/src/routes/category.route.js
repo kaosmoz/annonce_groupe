@@ -1,9 +1,15 @@
-import express from 'express'
-import { createCategory, afficheCategory } from '../controllers/category.controller.js'
+import express from 'express';
+import { getCategories, createCategory, getCategoryById, updateCategoryById, deleteCategoryById } from '../controllers/category.controller.js'
 
-const router = express.Router()
+createCategory
 
-router.post('/create', createCategory)
-router.get('/', afficheCategory)
 
-export default router
+const router = express.Router();
+
+router.get('/', getCategories)
+router.post('/', createCategory)
+router.get('/:id', getCategoryById)
+router.put('/:id', updateCategoryById)
+router.delete('/:id', deleteCategoryById)
+
+export default router;
